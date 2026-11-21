@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus &amp; Task Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="header-top">
+        <div>
+          <h1>Focus &amp; Task Tracker</h1>
+          <p class="subtitle">Pick one thing, start the timer, and get it done.</p>
+        </div>
+
+        <div class="theme-switcher" role="group" aria-label="Color theme">
+          <button class="theme-btn active" data-theme-choice="system" type="button" aria-pressed="true">System</button>
+          <button class="theme-btn" data-theme-choice="light" type="button" aria-pressed="false">Light</button>
+          <button class="theme-btn" data-theme-choice="dark" type="button" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Focus Timer Section -->
+    <section class="card timer-card" aria-label="Focus timer">
+      <div class="timer-display" id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button id="timer-toggle" class="btn btn-primary" type="button">Start Focus</button>
+        <button id="timer-reset" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- Task Input & List Section -->
+    <section class="card tasks-card" aria-label="Task list">
+      <form id="task-form" class="task-form">
+        <input
+          id="task-input"
+          type="text"
+          placeholder="What do you want to focus on?"
+          autocomplete="off"
+          required
+        />
+        <button class="btn btn-primary" type="submit">Add</button>
+      </form>
+
+      <div class="task-toolbar">
+        <span id="task-count" class="task-count">0 tasks remaining</span>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-btn active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="active" type="button">Active</button>
+          <button class="filter-btn" data-filter="completed" type="button">Done</button>
+        </div>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
